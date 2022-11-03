@@ -1,0 +1,100 @@
+// crear matrices /arrays
+// let nomMatrizOne = []
+let nomMatrizTwo = ['Logitech', 'Razer', 'Alienware']
+// let nomMatrizThree = new Array()
+
+const nomMatrizFour = Array.of("coex", "conocimiento", 20 ,20 ,3)
+// const nomMatrizFive = Array(20).fill(0)
+// const nomMatrizSix = ["HolaMundo", 2022, 2.5, [1,2,3],{name: "Pepito", lastName:"perez"}]
+// // ver en pantalla
+// console.log(nomMatrizTwo)
+
+// for(let index= 0; index < nomMatrizFour.length; index++ ){
+//     document.write(nomMatrizFour[index])
+// }
+
+// for(let i of nomMatrizFour){
+//     console.log(i);
+// }
+
+// // verificar valores contenidos
+// console.log(nomMatrizTwo.length);
+// console.log(nomMatrizTwo.includes("Razer"))
+// console.log(nomMatrizTwo.includes("Genius"))
+// console.log(nomMatrizFour);
+// console.log(nomMatrizFive);
+// console.log(nomMatrizSix);
+
+// console.log("Impresión 1");
+// for(let index= 0; index < nomMatrizFour.length; index++ ){
+//     console.log(nomMatrizFour[index])
+// }
+
+// console.log("Impresión 2");
+// for(let i of nomMatrizFour){
+//     console.log(i);
+// }
+
+// console.log("Impresión 3");
+// for(let i in nomMatrizFour){
+//     console.log(nomMatrizFour[i]);
+// }
+
+console.log("Impresión 4");
+nomMatrizFour.forEach(function(valor){
+    console.log(`Valor: ${valor}`);
+}
+)
+
+console.log("Impresión 5 forEach con Operación");
+let sumaMatriz =0
+nomMatrizFour.forEach(function(valor){
+    // typeof
+    if(typeof valor === 'number'){
+        sumaMatriz+=valor;
+    }
+    // valor numérico
+    if(valor > 0){
+        sumaMatriz+=valor;
+    }
+});
+console.log(`La Suma da: ${sumaMatriz}`);
+
+// insertar valores en array
+// const marcaDos = Array(10).fill("Genius")
+// console.log("Impresión 1" + marcaDos);
+
+// const marcaTres = []
+// for (let m = 0; m < 10; m++){
+//     marcaTres[m] = prompt("Ingrese la marca: ")
+// }
+// console.log("Impresión 3" + marcaTres);
+
+// let marcaCuatro = []
+// nombreMarca = prompt("Ingrese la marca: ")
+// marcaCuatro = nombreMarca.split("")
+// console.log(marcaCuatro)
+
+// let marcaCinco = []
+// for (let m = 0; m < 10; m++){
+//     marcaCinco.push(prompt("Ingrese la marca: "))
+// }
+// console.log("Impresión 5" + marcaCinco);
+
+// let marcaSeis = []
+// for (let m = 0; m < 10; m++){
+//     marcaCinco.unshift(prompt("Ingrese la marca: "))
+// }
+// console.log("Impresión 6" + marcaSeis);
+
+// let marcaSiete = []
+// for (let m = 0; m < 2; m++){
+//     marcaSiete.splice(m,0,prompt("Ingrese la marca: "))
+// }
+// console.log("Impresión 7: " + marcaSiete);
+
+// let marcaOcho = []
+// for (let m = 0; m < 2; m++){
+//     marcaOcho.splice(m,0,prompt("Ingrese la marca: "))
+// }
+// console.log("Impresión 8: " + marcaOcho);
