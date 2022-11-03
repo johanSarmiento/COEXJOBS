@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    width: 100vw;
+    height: 8vh;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+}
+.navbar{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: cornflowerblue;
+}
+.divright{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.logo{
+    margin-left: 10px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+}
+.logo:hover{
+    color: red;
+}
+.lista{
+    width: 60%;
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+}
+.lista a{
+    display: flex;
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+}
+.lista a:hover{
+    color:  darkgreen;
+}
+.texto{
+    font-size: 1.2rem;
+}
+.texto:hover{
+    border-top: 1px solid;
+}
+
+/* PARTE DOS DEL REPASO */
+.logo{
+    width: 60px;
+    height:40px;
+}
+
+.submenu{
+    display: none;
+}
+.navbar li:hover .submenu{
+    position: absolute;
+    width: 60px;
+    height: auto;
+    display: block;
+    list-style: none;
+    padding-top: 17px;
+    background-color: cornflowerblue;
+}
+.navbar li:hover li {
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+/* MAIN */
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+#containerPrac1{
+    width: 100%;
+    height: 100vh;
+    display: flex;  
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: lightblue;
+}
+.containerleft{
+    width: 45%;
+    height: 70%;
+    background-image: url(./recursos/photo-1664436341001-b02974ae7524.avif);
+    background-position: center;
+    background-size: cover;
+    filter: sepia(70%);
+    border-radius: 20px;
+}
+.containerRight{
+    width: 45%;
+    height: 70%;
+    padding: 30px;
+    text-align: start;
+}
+.containerRight *{
+    margin: 10px 20px;
+}
+.containerRight h1{
+    font-size: 2.7em;
+}
+.containerRight .btn{
+    padding: 10px 25px;
+    border-radius: 20px;
+    margin-top: 20px;
+    background-color: cornflowerblue;
+}
+
+/* PRACTICA4 */
+#containerPrac2{
+    width: 100%;
+    height: auto;
+}
+.gridTitulo{
+    width: 100%;
+    height: 10%;
+    background-color: lightslategray;
+    font-size: 2em;
+}
+.img{
+    background-position: center;
+    background-size: cover;
+    border: 1px solid;
+}
+.containerGrid{
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-auto-rows:160px     ;
+    grid-template-areas: 
+    "img1 img1 img4 img4"
+    "img1 img1 img5 img5"
+    "img2 img3 img5 img5"
+    "img2 img3 img6 img7";
+}
+.img1{
+    background-image: url(./recursos/aliya-amangeldi-RviFL3dfCKo-unsplash.jpg);
+    grid-area: img1;
+    background-position:  0 20%;
+}
+.img2{
+    background-image: url(./recursos/eberhard-grossgasteiger-hpOcJBsdw2c-unsplash.jpg);
+    grid-area: img2;
+}
+.img3{
+    background-image: url(./recursos/jayson-hinrichsen-_dtgXSMZPnQ-unsplash.jpg);
+    grid-area: img3;
+}
+.img4{
+    background-image: url(./recursos/jose-cuello-sKDyjvMlkCY-unsplash.jpg);
+    grid-area: img4;
+    background-position:  0 30%;
+}
+.img5{
+    background-image: url(./recursos/luigi-boccardo-u-YsS6o-Q3g-unsplash.jpg);
+    grid-area: img5;
+}
+.img6{
+    background-image: url(./recursos/meric-tuna-Gsl7uCtW2Qw-unsplash.jpg);
+    grid-area: img6;
+}
+.img7{
+    background-image: url(./recursos/wasa-crispbread-2mBxKv0XiYA-unsplash.jpg);
+    grid-area: img7;
+}
+/* FOOTER */
+#footer{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: cornflowerblue;
+}

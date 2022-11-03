@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+#container{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+}
+
+#cajaPadre{
+    position: relative;
+    top: 15%;
+    left: 21%;
+    border: 1px solid black;
+    width: 1000px;
+    height: 600px;
+}
+#cajaUno{
+    position: relative;
+    width: 800px;
+    height: 500px;
+    left: 10%;
+    top: 8%;
+    background-color: rgb(255, 0, 234);
+}
+
+#cajaDos{
+    position: relative;
+    width: 700px;
+    height: 400px;
+    left: 7%;
+    top: 10%;
+    background-color: rgb(243, 114, 222);
+}
+
+#cajaTres{
+    position: relative;
+    width: 600px;
+    height: 320px;
+    left: 7%;
+    top: 10%;
+    background-color: rgb(38, 25, 219);
+}
+
+#cajaCuatro{
+    position: relative;
+    width: 520px;
+    height: 240px;
+    left: 7%;
+    top: 13%;
+    background-color: rgb(6, 81, 194);
+}
+
+#cajaCinco{
+    position: relative;
+    width: 440px;
+    height: 180px;
+    left: 7%;
+    top: 12%;
+    background-color: rgb(47, 89, 226);
+}
+
+#cajaSeis{
+    position: relative;
+    width: 370px;
+    height: 115px;
+    left: 7%;
+    top: 18%;
+    background-color: rgb(106, 132, 218);
+}
+ 
+ 
+ 
+   

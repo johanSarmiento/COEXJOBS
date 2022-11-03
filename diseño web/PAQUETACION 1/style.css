@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-size: 100%;
+}
+.navbar{
+    width: 100%;
+    display: inline-block;
+    line-height: 60px;
+}
+.navbarSection>ul{
+    list-style: none;
+    display: inline;
+    float: right;
+}
+.navbarSection ul>li{
+    display: inline-block;
+}
+.navbarSection ul>li>a{
+    text-decoration: none;
+    color: #333;
+}
+.navbarSection ul>li>a:hover{
+    text-decoration: none;
+    color: tomato;
+}
+
+.navbarSection{
+    width: 80%;
+    margin: auto;
+}
+.navbarSection h1{
+    float: left;
+    font-size: 1.2rem;
+}
+.navbarSection h1>span{
+    color: tomato;
+    font-weight: 100;
+}
+/* CONTENIDO DE LA PAGINA */
+ .container{
+    width: 100%;
+}
+/*
+.containerSection{
+    width: 60%;
+    margin: auto;
+    position: relative;
+    padding: 2rem 0 40rem 0;
+}
+.containerSection h2{
+    font-size: 1.4rem;
+    font-weight: 200;
+    color: #455464;
+    margin: 1rem 0 1.5rem 0;
+}
+.containerSection p{
+    font-size: 0.7rem;
+    margin: 1.2rem 0;
+}
+.BtUno{
+    text-decoration: none;
+    color: white;
+    font-size: 0.8rem;
+    background-color: #455464;
+    padding: 8px 30px;
+    border-radius: 3px;
+}
+.BtUno:hover{
+    background-color: #45546400;
+    color: #455464;
+}
+.sectionright img{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    right: 50px;
+    top: 40px;
+} */
+
+/* FLEBOX */
+.containerSection{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+}
+.sectionLeft{
+    flex: 1 1 400px;
+    padding: 5rem 0 2rem 15rem;
+    margin: auto;
+}
+.sectionright{
+    flex: 1 1 200px;
+    padding: 30px;    
+}
+.sectionright img{
+    display: block;
+}

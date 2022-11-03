@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de registro - Mi web</title>
+</head>
+<body>
+    <fieldset style="border: 3px solid green ;">
+        <nav>
+        <h1>Formulario de registro</h1>
+        </nav>
+        <!-- input para pedri el nombre -->
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="" maxlength="50"><br><br>
+        <!-- input para pedri el Apellido -->
+        <label for="Apellido">Apellido:</label>
+        <input type="text" name="Apellido" id="" maxlength="50"><br><br>
+        <!-- elegir el genero de la persona -->
+        <label for="genero">Sexo: </label> 
+        <input type="radio" name="genero" id=""> HOMBRE
+        <input type="radio" name="genero" id="">MUJER
+        <br><br>
+        <!-- input para que ingrese el correo -->
+        <label for="email">Correo:</label>
+        <input type="email" name="email" id=""><br><br>
+        <!-- lista depegable -->
+        <label for="pobalcion">Poblacion</label>
+        <select name="poblacion" id="">
+            <option value="">Opciones</option>
+            <option value="Bucaramanga">Bucaramanga</option>
+            <option value="Floridablanca">Floridablanca</option>
+            <option value="Giron">Giron</option>
+            <option value="Piedecuesta">Piedecuesta</option>
+        </select><br><br>
+        <!-- pedirle aceptar al usuario -->
+        <input type="radio" name="" id="" checked="checked"  >Deseo recibir informacion sobre novedades y ofertas 
+        <br><br>
+        <input type="radio" name="" id="" >Declaro haber leido y aceptar las condicones generales del prgrama y la normativa sobre proteccion de datos
+        <br><br>
+        <!-- enviar el formulario -->
+        <input type="submit" value="Enviar">
+
+    </fieldset>
+</body>
