@@ -1,0 +1,11 @@
+create database Talento
+
+use Talento
+
+create table TBLTALENT(
+tal_cod varchar(20) PRIMERY KEY,
+fir_nam varchar (20) not null,
+las_nam varchar (20) not null,
+tel varchar(15) not null,
+bir_day date null 
+);
