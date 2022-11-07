@@ -3,9 +3,86 @@ create database Talento
 use Talento
 
 create table TBLTALENT(
-tal_cod varchar(20) PRIMERY KEY,
-fir_nam varchar (20) not null,
-las_nam varchar (20) not null,
-tel varchar(15) not null,
-bir_day date null 
+tal_cod VARCHAR(20) PRIMARY KEY,
+fir_nam VARCHAR(20) not null,
+las_nam VARCHAR(20) not null,
+tel VARCHAR(15) not null,
+bir_day date );
+
+CREATE TABLE TBLCOACH(
+coa_cod VARCHAR(20) PRIMARY KEY,
+fir_nam VARCHAR(20) not null,
+las_mam VARCHAR(20) not null,
+tel VARCHAR(20) not null unique
 );
+
+CREATE TABLE TBLSTUDY_GROUP(
+stu_cod VARCHAR(20) PRIMARY KEY,
+gro_nam VARCHAR(20) not null unique,
+wor_hou int(2) not null,
+stu_tal_cod VARCHAR(20),
+stu_coa_cod VARCHAR(20),
+FOREIGN KEY(stu_tal_cod) REFERENCES TBLTALENT (tal_cod),
+FOREIGN KEY(stu_coa_cod) REFERENCES TBLCOACH (coa_cod)
+ );
+
+CREATE TABLE TBLACADEMY_INFORMATION(
+aca_cod VARCHAR(20) PRIMARY KEY,
+ach VARCHAR(20) not null,
+yea date not null,
+aca_tal_cod VARCHAR(20),
+FOREIGN KEY(aca_tal_cod) REFERENCES TBLTALENT(tal_cod)
+);
+
+CREATE TABLE TBLWORK_EXPERIENCE(
+wor_cod VARCHAR(20) PRIMARY KEY,
+yea date not null,
+top varchar(20) not null,
+wor_tal_cod VARCHAR(20),
+FOREIGN KEY(wor_tal_cod) REFERENCES TBLTALENT(tal_cod)
+);
+
+CREATE TABLE TBLWORKING_DAY(
+wor_cod VARCHAR(10) PRIMARY KEY,
+kin VARCHAR(15) not null,
+wor_stu_cod VARCHAR(20),
+FOREIGN KEY (wor_stu_cod) REFERENCES TBLSTUDY_GROUP(stu_cod)
+);
+
+CREATE TABLE TBLTOPICS(
+top_cod VARCHAR(20) PRIMARY KEY,
+top VARCHAR(20) not null,
+top_stu_cod VARCHAR(20),
+FOREIGN KEY(top_stu_cod) REFERENCES TBLSTUDY_GROUP(stu_cod)
+);
+
+CREATE TABLE TBLADVISORY(
+adv_code VARCHAR(20) PRIMARY KEY,
+dat VARCHAR(20) not null,
+adv_coa_cod VARCHAR(20),
+adv_tal_cod VARCHAR(20),
+FOREIGN KEY(adv_coa_cod) REFERENCES TBLCOACH(coa_cod),
+FOREIGN KEY(adv_tal_cod) REFERENCES TBLTALENT(tal_cod)
+);
+
+Noviembre 04
+3) Crear el codigo del modelo normalizado por command line
+4) Alter Table
+ -Cambiar el nombre de una tabla
+ -Cambiar el nombre de una columna
+ -Cambiar el tipo de dato de una columna
+ -Agregar una columna a 2 tablas
+ -Cambiar el valor inicial de un auto-increment
+ -Eliminar una columna de una tabla
+ -Agregar una restriccion unique
+ -Agregar un check a una columna
+
+1.RENAME TABLE TBLSTUDY_GROUP TO TBLSTUDY 
+2.ALTER TABLE TBLSTUDY CHANGE gro_nam nam_gro VARCHAR(15);
+3.ALTER TABLE TBLSTUDY MODIFY COLUMN wor_hou int(3);
+4.alter table TBLSTUDY add des VARCHAR(50) not null;
+4.1 alter table TBLCOACH add yer date;
+5. no tengo auto-increment
+6.alter table TBLCOACH drop yer;
+7.ALTER TABLE TBLSTUDY ADD UNIQUE (wor_hou)
+8.ALTER TABLE TBLSTUDY ADD CHECK (wor_hou);
