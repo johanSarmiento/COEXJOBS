@@ -158,3 +158,54 @@ function ftnEliminar() {
     let elimianarNodo = document.getElementById("nuevoTexto")
     elimianarNodo.parentNode.removeChild(elimianarNodo)
 }
+
+// EXERCISE MANIPULATION IMAGES
+
+const fisrt = document.getElementById("img1V");
+const second = document.getElementById("img2V");
+const third = document.getElementById("img3V");
+const fourth = document.getElementById("img4V");
+fisrt.addEventListener("click",()=>{muestra("img1V")})
+second.addEventListener("click",()=>{muestra("img2V")})
+third.addEventListener("click",()=>{muestra("img3V")})
+fourth.addEventListener("click",()=>{muestra("img4V")})
+function muestra(num) {
+    let images = document.images[num].src
+    let big = document.images["pantalla"]
+    big.src=images
+}
+
+// EXERCISE CREATE LIST
+let listaElementos =document.querySelector('#elementos');
+// SEND ELEMT SUBMIT
+let form=document.querySelector('#frmLista');
+form.addEventListener('submit', fnAgregarElementos);
+//ENVIAR ELIMINAR EVENTO
+listaElementos.addEventListener('click', fnEliminarElementos);
+// LISTA DE FUNCION
+function fnAgregarElementos(evento){
+    evento.preventDefault();
+    let newElement=document.getElementById('txtElemento').value;
+    // crear un nuevo elemento de lista li
+    let li=document.createElement('li');
+     // crear un nuevo elemento de botón
+    let btnDelete=document.createElement('button');
+    // agregar elementos a las clases
+    li.className='list-group-item';
+    btnDelete.className='btn btn-light btn-outline-danger btn-sm float-end delete';
+
+    li.appendChild(document.createTextNode(newElement));
+    btnDelete.appendChild(document.createTextNode('X'));
+    
+    listaElementos.appendChild(li);
+    li.appendChild(btnDelete)
+}
+
+function fnEliminarElementos(evento){
+      // comprobar los elementos de la clase 'delete'
+    if(evento.target.classList.contains('delete')){
+            let li=evento.target.parentElement;
+            listaElementos.removeChild(li);
+        
+    }
+}
