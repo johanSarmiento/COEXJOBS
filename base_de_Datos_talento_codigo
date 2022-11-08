@@ -86,3 +86,33 @@ Noviembre 04
 6.alter table TBLCOACH drop yer;
 7.ALTER TABLE TBLSTUDY ADD UNIQUE (wor_hou)
 8.ALTER TABLE TBLSTUDY ADD CHECK (wor_hou);
+
+adicional, para este ejercicio vamos a aprender a guardar datos usando la instrucción INSERT.
+sintaxis: INSERT INTO (columnas) VALUES (valores)
+
+-INSERT INTO TBLCOACH(coa_cod, fir_nam, las_mam, tel) VALUES ("1515","sergio","leon","3173214343");
+-INSERT INTO TBLCOACH(coa_cod, fir_nam, las_mam, tel) VALUES ("1010","juan","perez","3173221221");
+
+-INSERT INTO TBLTALENT(tal_cod, fir_nam, las_nam, tel, bir_day) VALUES ("1010","johan","sarmiento","3173221221","2004-07-15");
+-INSERT INTO TBLTALENT(tal_cod, fir_nam, las_nam, tel, bir_day) VALUES ("1212","manuel","sierra","3151222121","2002-10-5");
+
+-INSERT INTO TBLACADEMY_INFORMATION(aca_cod, ach, yea, aca_tal_cod) VALUES ("52","JavaScript","2022-07-12","1010");
+-INSERT INTO TBLACADEMY_INFORMATION(aca_cod, ach, yea, aca_tal_cod) VALUES ("51","PHP","2021-12-5","1212");
+
+-INSERT INTO TBLADVISORY(adv_code, dat, adv_coa_cod, adv_tal_cod) VALUES ("12","ayuda_de_front","1515","1010");
+-INSERT INTO TBLADVISORY(adv_code, dat, adv_coa_cod, adv_tal_cod) VALUES ("10","ayuda_de_JavaScript","1010","1212");
+
+-INSERT INTO TBLSTUDY_GROUP(stu_cod, gro_nam, wor_hou, stu_tal_cod,stu_coa_cod) VALUES ("1313","G2noche","12","1010","1515");
+-INSERT INTO TBLSTUDY_GROUP(stu_cod, gro_nam, wor_hou, stu_tal_cod,stu_coa_cod) VALUES ("5151","G3dia","10","1212","1010");
+
+-INSERT INTO TBLTOPICS(top_cod,top,top_stu_cod) VALUES ("21","JavaScript","1313");
+-INSERT INTO TBLTOPICS(top_cod,top,top_stu_cod) VALUES ("91","psint","5151");
+
+-INSERT INTO TBLWORKING_DAY(wor_cod,kin,wor_stu_cod) VALUES ("41","basededatos","1313");
+-INSERT INTO TBLWORKING_DAY(wor_cod,kin,wor_stu_cod) VALUES ("81","basededatos2","5151");
+
+-INSERT INTO TBLWORK_EXPERIENCE(wor_cod,yea,top,wor_tal_cod)VALUES("3131","2020-08-12","JAVA","1010")
+-INSERT INTO TBLWORK_EXPERIENCE(wor_cod,yea,top,wor_tal_cod)VALUES("3535","2020-01-10","PHP","1212")
+6) Consultar los datos guardados en cada tabla, para ello vamos a usar la instrucción SELECT en su forma básica:
+SELECT * FROM NombreTabla
+-SELECT * FROM TBLTALENT;
