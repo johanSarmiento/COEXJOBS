@@ -1,0 +1,125 @@
+CREACION DE LA BASE DE DATOS
+
+CREATE DATABASE MINISTERIO_DEFENSA;
+
+USE MINISTERIO_DEFENSA;
+
+CREATE TABLE TBLMILITARY_SERVICE(
+mil_cod VARCHAR(10) PRIMARY KEY,
+mil_loc VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE TBLARMY_CORPS(
+arm_cod VARCHAR(10) PRIMARY KEY,
+arm_den VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE TBLCOMPANY(
+com_cod VARCHAR(10) PRIMARY KEY,
+con_mai_act VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE TBLQUARTERS(
+qua_cod VARCHAR(10) PRIMARY KEY,
+qua_nam VARCHAR(30) NOT NULL UNIQUE,
+qua_loc VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE TBLSERVICES(
+ser_cod VARCHAR(10) PRIMARY KEY,
+ser_des VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE TBLPERSON(
+per_cod VARCHAR(10) PRIMARY KEY,
+per_fir_nam VARCHAR(10) NOT NULL,
+per_las_nam VARCHAR(10) NOT NULL,
+per_mil_cod VARCHAR(10),
+FOREIGN KEY (per_mil_cod) REFERENCES TBLMILITARY_SERVICE(mil_cod)
+);
+
+CREATE TABLE TBLSOLDER(
+sol_cod VARCHAR(10) PRIMARY KEY UNIQUE,
+sol_fir_nam VARCHAR(50) NOT NULL,
+sol_las_nam VARCHAR(50) NOT NULL,
+sol_gra VARCHAR(20) NOT NULL ,
+sol_mil_cod VARCHAR(10),
+sol_arm_cod VARCHAR(10),
+sol_com_cod VARCHAR(10),
+FOREIGN KEY(sol_mil_cod) REFERENCES TBLMILITARY_SERVICE(mil_cod),
+FOREIGN KEY(sol_arm_cod) REFERENCES TBLARMY_CORPS(arm_cod),
+FOREIGN KEY(sol_com_cod) REFERENCES TBLCOMPANY(com_cod)
+);
+
+
+CREATE TABLE TBLARMYCORPS_QUARTERS(
+arm_qua_cod VARCHAR(10) PRIMARY KEY,
+arm_qua_arm_cod VARCHAR(10),
+arm_qua_qua_cod VARCHAR(10),
+FOREIGN KEY(arm_qua_arm_cod) REFERENCES TBLARMY_CORPS(arm_cod),
+FOREIGN KEY(arm_qua_qua_cod) REFERENCES TBLQUARTERS(qua_cod)
+);
+
+
+CREATE TABLE TBLSOLDER_SERVICE(
+sol_ser_cod VARCHAR(10) PRIMARY KEY,
+sol_ser_ser_cod VARCHAR(10),
+sol_ser_sol_cod VARCHAR(10),
+FOREIGN KEY(sol_ser_ser_cod) REFERENCES TBLSERVICES(ser_cod),
+FOREIGN KEY(sol_ser_sol_cod) REFERENCES TBLSOLDER(sol_cod)
+);
+
+
+• Agregue 3 campos a 3 tablas diferentes.
+
+ALTER TABLE TBLSOLDER ADD yea DATE NOT NULL;
+ALTER TABLE TBLSOLDER ADD Tim DATE NOT NULL;
+ALTER TABLE TBLSOLDER ADD wei INT(3) NOT NULL;
+
+ALTER TABLE TBLARMY_CORPS ADD CAN INT(10) NOT NULL;
+ALTER TABLE TBLARMY_CORPS ADD des VARCHAR(15) NOT NULL;
+ALTER TABLE TBLARMY_CORPS ADD can_wea INT(10) NOT NULL;
+
+ALTER TABLE TBLQUARTERS ADD can_sol INT(10) NOT NULL;
+ALTER TABLE TBLQUARTERS ADD can_bed INT(10) NOT NULL;
+ALTER TABLE TBLQUARTERS ADD des VARCHAR(20) NOT NULL UNIQUE;
+
+• Cambiar el nombre a 2 tablas y a 2 columnas con su respectivo tipo de dato.
+
+
+
+ALTER TABLE TBLSERVICES RENAME TBLSERVICE;
+ALTER TABLE TBLSOLDER RENAME TBLSOLDER_MILITARY;
+
+ALTER TABLE TBLARMY_CORPS CHANGE CAN can_sol int(2) ;
+ALTER TABLE TBLQUARTERS CHANGE can_bed can_cha VARCHAR(10);
+
+• Agregar una llave primaria (PK) de una tabla cualquiera con ALTER.
+
+ALTER TABLE TBLCOMPANYDUPLICADO ADD com_dup_cod VARCHAR(20) PRIMARY KEY;
+
+• Agregar una llave foránea (FK) de una tabla cualquiera con ALTER. 
+
+ALTER TABLE TBLCOMPANYDUPLICADO ADD com_sol_cod VARCHAR(20);
+
+ALTER TABLE TBLCOMPANYDUPLICADO ADD FOREIGN KEY (com_sol_cod) REFERENCES TBLSOLDER_MILITARY(sol_cod);
+
+• Ingrese mínimo 3 registros por tabla.
+
+INSERT INTO TBLMILITARY_SERVICE(mil_cod,mil_loc) VALUES("0101","bucaramanga");
+
+INSERT INTO TBLMILITARY_SERVICE(mil_cod,mil_loc) VALUES("0202","Cali");
+
+INSERT INTO TBLMILITARY_SERVICE(mil_cod,mil_loc) VALUES("0303","Bogota");
+---------------------------------------------------------------------------
+INSERT INTO TBLPERSON(per_cod,per_fir_nam,per_las_nam,per_mil_cod) VALUES("1010","johan","sarmienti","0101");
+
+INSERT INTO TBLPERSON(per_cod,per_fir_nam,per_las_nam,per_mil_cod) VALUES("2020","juan","perez","0202");
+
+INSERT INTO TBLPERSON(per_cod,per_fir_nam,per_las_nam,per_mil_cod) VALUES("3030","andrea","Rincon","0202");
+---------------------------------------------------------------------------
+INSERT INTO TBLARMY_CORPS(arm_cod,arm_den,can_sol,des,can_wea) VALUES
+("1111","fuerzaEspecial","20","antinarcoticos","20"),("1212,"fuerzaAeria","30","proteccion aeria","10"),("1313","fuerzaMarina","50","proteccion marina","50");
+ 
+
+
