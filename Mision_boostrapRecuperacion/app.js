@@ -84,5 +84,37 @@
 
 
 document.querySelector("#card_1").addEventListener("click",()=>{
-    
+    document.getElementById("card_1").style.width="600px";
+    document.getElementById("tituoloIbu").style.fontSize="10px";
+    const newdiv = document.querySelector("#card_1")
+    const div = document.createElement("div");
+    div.textContent="Sal De Frutas Lua Plus Polvo Citrus Caja Con 6 Sobres "
+    newdiv.appendChild(div)
+})
+document.querySelector("#card_1").addEventListener("dblclick",()=>{
+    document.getElementById("card_1").style.width="100%";
+})
+
+document.querySelector("#card_2").addEventListener("click",()=>{
+    document.getElementById("card_2").style.width="600px";
+    document.getElementById("tituoloIbu").style.fontSize="10px";
+})
+document.querySelector("#card_2").addEventListener("dblclick",()=>{
+    document.getElementById("card_2").style.width="100%";
+})
+
+document.querySelector("#card_3").addEventListener("click",()=>{
+    document.getElementById("card_3").style.width="600px";
+    document.getElementById("tituoloIbu").style.fontSize="10px";
+})
+document.querySelector("#card_3").addEventListener("dblclick",()=>{
+    document.getElementById("card_3").style.width="100%";
+})
+
+document.querySelector("#card_4").addEventListener("click",()=>{
+    document.getElementById("card_4").style.width="600px";
+    document.getElementById("tituoloIbu").style.fontSize="10px";
+})
+document.querySelector("#card_4").addEventListener("dblclick",()=>{
+    document.getElementById("card_4").style.width="100%";
 })
