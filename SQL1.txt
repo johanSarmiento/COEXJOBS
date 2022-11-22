@@ -1,0 +1,68 @@
+CREATE DATABASE SQL1;
+
+USE SQL1;
+
+CREATE TABLE TBL_PROFESOR(
+doc_prof VARCHAR(11),
+nom_prof VARCHAR(30) NOT NULL,
+ape_prof VARCHAR(30) NOT NULL,
+cate_prof INT NOT NULL,
+sal_prof INT NOT NULL,
+CONSTRAINT pk_profesor PRIMARY KEY(doc_prof)
+);
+
+CREATE TABLE TBL_CURSO(
+cod_curs INT AUTO_INCREMENT,
+nom_curs VARCHAR(100),
+horas_cur INT,
+valor_cur INT,
+CONSTRAINT pk_curso PRIMARY KEY(cod_curs)
+);
+
+CREATE TABLE TBL_ESTUDIANTE(
+doc_est VARCHAR(11),
+nom_est VARCHAR(30),
+ape_est VARCHAR(30),
+edad_est INT,
+CONSTRAINT pk_estudiante PRIMARY KEY(doc_est)
+);
+
+CREATE TABLE TBL_ESTUDIANTEXCURSO(
+cod_cur_estcur INT,
+doc_est_estcur INT,
+fec_ini_estcur DATE,
+CONSTRAINT fk_codCurEstcur FOREIGN KEY(cod_cur_estcur) REFERENCES TBL_CURSO(cod_curs),
+CONSTRAINT fk_docEstEstcur FOREIGN KEY(doc_est_estcur) REFERENCES TBL_ESTUDIANTE(doc_est)
+);
+-------------------------------------------------------------------------------
+
+INSERTAR DATOS
+
+-------------------------------------------------------------------------------
+INSERT INTO TBL_PROFESOR (doc_prof,nom_prof,ape_prof,cate_prof,sal_prof) 
+VALUES
+("63.502.720","Martha","Rojas","2","690.000"),
+("91.2166.904","Carlos","Perez","3","950.000"),
+("13.826.789","Maritza","Angarita","1","550.000"),
+("1098765798","Alejandra","Torres","4","1.100000");
+
+INSERT INTO TBL_CURSO (cod_curs,nom_curs,horas_cur,valor_cur) 
+VALUES
+("149842","Fundamentos de base de datso","40","500.000"),
+("250067","Fundamentos de SQL","20","700.000"),
+("289011","Manejo de Mysql","45","550.000"),
+("345671","Fundamentos of Oracle","60","3.000000");
+
+INSERT INTO TBL_Estudiante (doc_est,nom_est,ape_est,edad_est) 
+VALUES
+("3502720","Maria","Perez","2"),
+("91245678","Carlos Jose","Lopez","3"),
+("1098098097","Jonatan","Ardila","1"),
+("109876579","Carlos","Martinez","4");
+
+INSERT INTO TBL_ESTUDIANTEXCURSO(doc_cur_estcur,doc_est_estcur,fec_ini_estcur) 
+VALUES
+("289011","1098765678","01-02-2011"),
+("250067","63502720","01-03-2011"),
+("289011","1098098097","01-02-2011"),
+("345671","63502720","01-04-2011");
