@@ -1,0 +1,140 @@
+CREATE DATABASE bibliotecOF;
+USE bibliotecOF;
+
+CREATE TABLE tblAuthor(
+aut_cod VARCHAR(10),
+aut_fir_nam VARCHAR(20) NOT NULL,
+aut_las_name VARCHAR(20) NOT NULL,
+aut_yer DATE NOT NULL,
+CONSTRAINT PKAuthor PRIMARY KEY(aut_cod)
+);
+
+CREATE TABLE tblAB(
+ab_cod VARCHAR(10),
+ab_boo_cod VARCHAR(10),
+ab_aut_cod VARCHAR(10),
+CONSTRAINT PKAB PRIMARY KEY(ab_cod)
+);
+
+CREATE TABLE tblEDITORY(
+edi_cod VARCHAR(5),
+edi_nom VARCHAR(20) NOT NULL,
+CONSTRAINT PKedicod PRIMARY KEY (edi_cod),
+CONSTRAINT UNNom_edi UNIQUE (edi_nom)
+);
+
+
+CREATE TABLE tblbooks(
+boo_cod VARCHAR(10),
+boo_tit VARCHAR(20) NOT NULL,
+boo_isb VARCHAR(30) NOT NULL,
+boo_num_pag INT(20) NOT NULL,
+boo_edi_cod VARCHAR(5),
+CONSTRAINT Untit UNIQUE(boo_tit),
+CONSTRAINT Unibsb UNIQUE (boo_isb),
+CONSTRAINT PKboo PRIMARY KEY(boo_cod),
+CONSTRAINT FKedi FOREIGN KEY (boo_edi_cod) REFERENCES tblEDITORY (edi_cod)
+);
+
+CREATE TABLE tblcopie(
+cop_cod VARCHAR(10),
+cop_cat INT NOT NULL,
+cop_boo_cod VARCHAR(10),
+CONSTRAINT PKmod PRIMARY KEY(cop_cod),
+CONSTRAINT FKboo_cod FOREIGN KEY (cop_boo_cod) REFERENCES tblbooks(boo_cod)
+);
+
+CREATE TABLE tblLEND(
+len_cod VARCHAR(10),
+len_date DATE NOT NULL,
+len_ret DATE NOT NULL,
+len_use_cod VARCHAR(10),
+CONSTRAINT PKlendcod PRIMARY KEY (len_cod)
+);
+
+CREATE TABLE tblLC(
+um_cod VARCHAR(10),
+um_cop_cod VARCHAR(10),
+um_len_cod VARCHAR(10),
+CONSTRAINT PKumcod PRIMARY KEY (um_cod),
+CONSTRAINT FKumcopcod FOREIGN KEY(um_cop_cod) REFERENCES tblcopie(cop_cod),
+CONSTRAINT FKumlendcod FOREIGN KEY (um_len_cod) REFERENCES tblLEND(len_cod)
+);
+
+
+CREATE TABLE tblUSER(
+use_cod VARCHAR(10),
+use_fir_nam VARCHAR(50) NOT NULL,
+use_las_name VARCHAR(50) NOT NULL,
+use_adr VARCHAR(10) NOT NULL,
+use_pho VARCHAR(10) NOT NULL,
+CONSTRAINT PKuse_cod PRIMARY KEY (use_cod),
+CONSTRAINT Unadr UNIQUE(use_adr)
+); 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO tblAuthor (aut_cod,aut_fir_nam,aut_las_name,aut_yer)
+VALUES
+("001","agriel","garcia","1958-07-15"),
+("002","petro","perez","1950-10-30"),
+("003","andres","sarmiento","2004-07-15"),
+("004","maria","torres","2000-10-25"); 
+
+INSERT INTO tblUSER
+VALUES
+('001','Farit','Torres Gelves','cll 2 #5-7','3254869757'),
+('002','Gilberto','Torres Gelves','cll 3 #5-7','3254867757'),
+('003','Lucia','Torres Gelves','cll 4 #5-7','3252269757'),
+('004','Sergio','Torres Gelves','cll 5 #5-1','3154869757');
+
+INSERT INTO tblEDITORY
+VALUES
+('011','NORMA'),
+('012','MUNDONUEVO'),
+('013','HASTALAPRO'),
+('014','ELMUNDODELALECTURA');
+
+INSERT INTO tblLEND
+VALUES
+('001','2022-12-24','2022-12-31','001'),
+('002','2022-12-24','2022-12-31','002'),
+('003','2022-12-24','2022-12-31','003'),
+('004','2022-12-24','2022-12-31','004');
+
+INSERT INTO tblbooks
+VALUES
+('100','Satanas','3524147','70',"011"),
+('101','100añosdesoledad','546843854684','250',"012"),
+('102','laculpaesdelavaca','68468684684',"150","013"),
+('103','relatodeunaasesino','4654861681','180',"014");
+
+INSERT INTO tblAB
+VALUES
+('110','100',"001"),
+('112','101','002'),
+('113','102','003'),
+('114','103','004');
+
+INSERT INTO tblLC
+VALUES
+('1111','1115',"001"),
+('1112','1116','002'),
+('1113','1117','003'),
+('1114','1118','004');
+
+INSERT INTO tblcopie
+VALUES
+('1115','50',"100"),
+('1116','100','101'),
+('1117','50','102'),
+('1118','120','103');
+
+------------------------------------------------------------------------------------------------------
+a= select * from tblAuthor where aut_cod ="001";
+b= select aut_cod, aut_fir_nam, aut_las_name from tblAuthor order by aut_cod;
+c= SELECT aut_cod, aut_fir_nam, aut_las_name from tblAuthor order by aut_fir_nam;
+d= select aut_cod, aut_fir_nam, aut_las_name from tblAuthor where aut_fir_nam like "%o";
+
+
+

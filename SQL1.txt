@@ -28,10 +28,10 @@ CONSTRAINT pk_estudiante PRIMARY KEY(doc_est)
 );
 
 CREATE TABLE TBL_ESTUDIANTEXCURSO(
-cod_cur_estcur INT,
-doc_est_estcur INT,
+cod_curs_estcur INT,
+doc_est_estcur VARCHAR(11),
 fec_ini_estcur DATE,
-CONSTRAINT fk_codCurEstcur FOREIGN KEY(cod_cur_estcur) REFERENCES TBL_CURSO(cod_curs),
+CONSTRAINT fk_codCurEstcur FOREIGN KEY(cod_curs_estcur) REFERENCES TBL_CURSO(cod_curs),
 CONSTRAINT fk_docEstEstcur FOREIGN KEY(doc_est_estcur) REFERENCES TBL_ESTUDIANTE(doc_est)
 );
 -------------------------------------------------------------------------------
@@ -41,10 +41,10 @@ INSERTAR DATOS
 -------------------------------------------------------------------------------
 INSERT INTO TBL_PROFESOR (doc_prof,nom_prof,ape_prof,cate_prof,sal_prof) 
 VALUES
-("63.502.720","Martha","Rojas","2","690.000"),
-("91.2166.904","Carlos","Perez","3","950.000"),
-("13.826.789","Maritza","Angarita","1","550.000"),
-("1098765798","Alejandra","Torres","4","1.100000");
+("63502720","Martha","Rojas","2","450000"),
+("912166904","Carlos","Perez","3","950000"),
+("13826789","Maritza","Angarita","1","550000"),
+("1098765798","Alejandra","Torres","4","1100000");
 
 INSERT INTO TBL_CURSO (cod_curs,nom_curs,horas_cur,valor_cur) 
 VALUES
@@ -55,14 +55,50 @@ VALUES
 
 INSERT INTO TBL_Estudiante (doc_est,nom_est,ape_est,edad_est) 
 VALUES
-("3502720","Maria","Perez","2"),
-("91245678","Carlos Jose","Lopez","3"),
-("1098098097","Jonatan","Ardila","1"),
-("109876579","Carlos","Martinez","4");
+("62302720","Maria","Perez","19"),
+("12345678","Carlos Jose","Lopez","45"),
+("1098098097","Jonatan","Ardila","20"),
+("10987657679","Carlos","Martinez","15");
 
-INSERT INTO TBL_ESTUDIANTEXCURSO(doc_cur_estcur,doc_est_estcur,fec_ini_estcur) 
+INSERT INTO TBL_ESTUDIANTEXCURSO(cod_curs_estcur,doc_est_estcur	,fec_ini_estcur) 
 VALUES
-("289011","1098765678","01-02-2011"),
-("250067","63502720","01-03-2011"),
-("289011","1098098097","01-02-2011"),
-("345671","63502720","01-04-2011");
+("149842","1098098097","2011-02-11"),
+("250067","10987657679","2011-03-13"),
+("289011","12345678","2011-02-23"),
+("345671","62302720","2011-04-23");
+
+1. Mostrar los salarios de los profesores ordenados por categoría.
+
+SELECT * FROM tbl_profesor ORDER BY cate_prof;
+
+2. Mostrar los cursos cuyo valor sea mayor a $500.000.
+
+SELECT * FROM tbl_profesor WHERE sal_prof > 500000;
+
+3. Contar el número de estudiantes cuya edad sea mayor a 22.
+
+SELECT COUNT(edad_est) FROM tbl_estudiante WHERE edad_est >22;
+
+4. Mostrar el nombre y la edad del estudiante más joven.
+
+SELECT nom_est,ape_est FROM tbl_estudiante WHERE edad_est = (SELECT MIN(edad_est) FROM tbl_estudiante);
+
+5. Calcular el valor promedio de los cursos cuyas horas sean mayores a 40.
+
+Select AVG(valor_cur) from tbl_curso WHERE horas_cur>40 ;
+
+6. Obtener el sueldo promedio de los profesores de la categoría 1.
+
+Select * from tbl_curso order by nom_curs asc;
+
+7. Mostrar todos los campos de la tabla curso en orden ascendente según el valor.
+
+Select * from tbl_curso order by nom_curs asc;
+
+8. Mostrar el nombre del profesor con menor sueldo.
+
+SELECT nom_prof FROM tbl_profesor WHERE sal_prof = (SELECT MIN(sal_prof)FROM tbl_profesor );
+
+9. Visualizar los profesores cuyo sueldo está entre $500.000 y $700.000.
+
+SELECT nom_prof FROM tbl_profesor WHERE sal_prof>'500000' AND sal_prof<'700000';
