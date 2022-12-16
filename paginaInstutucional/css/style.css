@@ -8,31 +8,130 @@
     align-items: center;
     justify-content: center;
 }
+
+/* ------------------------------------------------------------------------------------------------------------------------------ */
+/* NAVBAR */
 .navbarIns{
     width: 100%;
     height: auto;
     justify-content: space-around;
     position: fixed;
     z-index: 1000;
-    
-    background-color: rgba(0, 0, 0, 0.123);
+    background-color: #404258a4;
 }
 .navbarIns *{
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: 1.2em;
     padding: 10px;
 }
 .Home{
     width: 100%;
     height: 100vh;
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.658),
-        rgba(0, 0, 0, 0.692)
-    );
 }
 .logo{
     font-size: 1.5em;
 }
-.navleft{
+/* ------------------------------------------------------------------------------------------------------------------------------ */
+/* NAVBAR */
+.QuienesSomos{
+    width: 100%;
+    height: 100vh;
+    padding: 20px 0;
+    background-color: #6B728E;
+    color: white;
+    justify-content: space-evenly;
+}
+span{
+    color: #404258;
+    font-size: 2em;
+}
+.somosLeft{
+    width: 45%;
+    height: 70%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.somosRight{
+    width: 45%;
+    height: 80%;
+}
+.imgQuienes{
+    width: 100%;
+    height: 100%;
+}
+/* ------------------------------------------------------------------------------------------------------------------------------ */
+/* Mision */
+.Mision{
+    width: 100%;
+    height: 70vh;
+    padding: 30px 0;
+    background-color: #50577A;
+    justify-content: flex-start;
+    color: white;
+}
+.misionleft{
+    width: 40%;
+    height: 70%;
+    margin: 0px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.misionRight{
+    width: 35%;
+    height: 100%;
+}
+.imgMision{
+    width: 100%;
+    height: 100%;
+}
+.titulo{
+    color: #404258;
+    font-size: 4em;
+}
+/* ------------------------------------------------------------------------------------------------------------------------------ */
+/* REGISTRAR */
+.Vision{
+    width: 100%;
+    height: 70vh;
+    padding: 30px 0;
+    background-color: #6B728E;
+    color: white;
+    justify-content: flex-end;
+}
+.visionLeft{
+    width: 35%;
+    height: 100%;
+}
+.visionRight{
+    width: 45%;
+    height: 70%;
+    margin: 0 20px;
+    flex-direction: column;
+}
+.imgVision{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------ */
+/* REGISTRAR */
+
+.registrarse{
+    width: 100%;
+    height: 100vh;
+    background-color: #404258;
+}
+.divRegistro{
+    width: 30%;
+    height: 70%;
+    border-radius: 20px;
+    flex-direction: column;
+    background-color: #474E68;
+    color: white;
+    box-shadow: 10px 10px 5px black;
+}
+.registroForm{
+    text-align: center;
 }

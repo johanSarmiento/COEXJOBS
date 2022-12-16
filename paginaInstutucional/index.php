@@ -18,7 +18,7 @@
         </div>
         <div class="navright">
             <a href="">Ingresar</a>
-            <a href="">Registrarse</a>
+            <a href="Registrar.php">Registrarse</a>
         </div>
     </nav>
     <?php  
