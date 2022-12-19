@@ -12,9 +12,9 @@
     <nav class="contenedor navbarIns">
         <div class="contenedor navleft">
             <h2 class="logo">COMAUXI</h2>
-            <a href="">Quienes Somos</a>
-            <a href="">Mision</a>
-            <a href="">Vision</a>
+            <a href="#QuienesSomos">Quienes Somos</a>
+            <a href="#Mision">Mision</a>
+            <a href="#Vision">Vision</a>
         </div>
         <div class="navright">
             <a href="">Ingresar</a>
@@ -27,7 +27,7 @@
         include "Mision.php";
         include "Vision.php";
     ?>
-
+ 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<section class="contenedor Mision">
+<section id="Mision" class="contenedor Mision">
         <div class="contenedor misionleft">
             <h2 class="titulo">MISION</h2>
             <p>Propiciar experiencias de aprendizaje que:

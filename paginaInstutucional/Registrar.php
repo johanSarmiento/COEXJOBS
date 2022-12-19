@@ -15,29 +15,30 @@
             <form action="" method="get" class="registroForm">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Nombre</span>
-                    <input type="text" class="form-control" placeholder="nombre">
+                    <input type="text" class="form-control" placeholder="nombre" id="Nombre">
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Apellido</span>
-                    <input type="text" class="form-control" placeholder="Apellido">
+                    <input type="text" class="form-control" placeholder="Apellido" id="Apellido">
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Usuario</span>
-                    <input type="text" class="form-control" placeholder="Usuario">
+                    <input type="text" class="form-control" placeholder="Usuario" id="Usuario">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Nombre Correo" id="Correo">
+                    <span class="input-group-text" id="basic-addon2">@correo.com</span>
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Contraseña</span>
-                    <input type="password" class="form-control" placeholder="Constraseña">
+                    <input type="password" class="form-control" placeholder="Constraseña" id="Contraseña">
                 </div>
 
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Nombre Correo">
-                    <span class="input-group-text" id="basic-addon2">@correo.com</span>
-                </div>
-                <button type="submit" class="btn btn-light">Submit</button>
+                <button type="submit" class="btn btn-light">Submit</button> 
             </form>
         </main>
     </section>

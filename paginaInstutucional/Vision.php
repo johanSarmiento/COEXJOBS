@@ -1,4 +1,4 @@
-<section class="contenedor Vision">
+<section id="Vision" class="contenedor Vision">
         <div class="visionLeft">
             <img src="img/Vision.jpg" class="imgVision">
         </div>

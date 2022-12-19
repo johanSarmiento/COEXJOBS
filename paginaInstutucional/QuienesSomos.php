@@ -1,4 +1,4 @@
-<section class="contenedor QuienesSomos">
+<section id="QuienesSomos" class="contenedor QuienesSomos">
 
         <div class="contenedor somosLeft">
             <h2>Somos <br><span>COMAUXI</span></h2>
