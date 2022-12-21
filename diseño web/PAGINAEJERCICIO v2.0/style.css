@@ -14,14 +14,13 @@ html{
 }
 /* MENU DE LA PAGINA */
 #menu{
-    background-color: var(--my-background);
     height: 40%;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
+    background-color: var(--my-background);
 }
 #menu .TituloNav{
     width: 35%;
