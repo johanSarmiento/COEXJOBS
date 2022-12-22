@@ -13,29 +13,30 @@
         <main class="contenedor divRegistro">
             <h1>Registrate</h1>
             <form action="RegistrarUsuario.php" method="GET" class="registroForm">
+
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Nombre</span>
-                    <input type="text" class="form-control" placeholder="nombre" name="use_fir_nam">
+                    <input type="text" class="form-control" placeholder="nombre" name="use_fir_nam" required>
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Apellido</span>
-                    <input type="text" class="form-control" placeholder="Apellido" name="use_las_nam">
+                    <input type="text" class="form-control" placeholder="Apellido" name="use_las_nam" required>
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Usuario</span>
-                    <input type="text" class="form-control" placeholder="Usuario" name="use_use">
+                    <input type="text" class="form-control" placeholder="Usuario" name="use_use" required>
                 </div>
 
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Nombre Correo" name="use_ema">
+                    <input type="mail" class="form-control" placeholder="Nombre Correo" name="use_ema" required>
                     <span class="input-group-text" id="basic-addon2">@correo.com</span>
                 </div>
 
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Contraseña</span>
-                    <input type="password" class="form-control" placeholder="Constraseña" name="use_pas">
+                    <span class="input-group-text" id="basic-addon1">Contrasena</span>
+                    <input type="text" class="form-control" placeholder="Constraseña" name="use_pas" required>
                 </div>
 
                 <button type="submit" class="btn btn-light">Submit</button>     

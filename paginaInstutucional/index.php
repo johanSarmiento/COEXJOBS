@@ -17,7 +17,7 @@
             <a href="#Vision">Vision</a>
         </div>
         <div class="navright">
-            <a href="Ingresar.php">Ingresar</a>
+            <a href="ingresar.php">Ingresar</a>
             <a href="Registrar.php">Registrarse</a>
         </div>
     </nav>

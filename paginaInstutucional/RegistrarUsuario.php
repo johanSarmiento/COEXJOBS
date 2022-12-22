@@ -2,27 +2,42 @@
 
 include ("conectarBD.php");
 
-$bdNombre = isset($_GET["use_fir_nam"]);
-$bdApellido = isset($_GET["use_las_nam"]);
-$bdUsuario = isset($_GET["use_use"]);
-$bdCorreo = isset($_GET["use_ema"]);
-$bdContraseña = isset($_GET["use_pas"]);
+$bdNombre = $_GET["use_fir_nam"];
+$bdApellido = $_GET["use_las_nam"];
+$bdUsuario = $_GET["use_use"];
+$bdCorreo = $_GET["use_ema"];
+$bdContrasena = $_GET["use_pas"];
 
-echo $bdNombre;
+echo $bdNombre." <br>";
+echo $bdApellido." <br>";
+echo $bdUsuario." <br>";
+echo $bdCorreo." <br>";
+echo $bdContrasena." <br>";
 
-function registrarUsuario ($bdNombre, $bdApellido, $bdUsuario, $bdCorreo, $bdContraseña,$conn){
-    // $consultarUsuarios = "INSERT INTO tblusurs (use_rol_id,use_fir_nam,use_las_nam,use_use_nam,use_pas,use_ema)  VALUES (5,'$bdNombre','$bdApellido','$bdUsuario','$bdCorreo','$bdContraseña);";
+if (isset($_GET["use_fir_nam"]) && isset($_GET["use_las_nam"]) && isset($_GET["use_use"]) && isset($_GET["use_ema"]) && isset($_GET["use_pas"])) {
     
-    $consultarUsuarios = "INSERT INTO tblusurs (use_rol_id,use_fir_nam,use_las_nam,use_use,use_pas,use_ema) VALUES(5,\"$bdNombre\",\"$bdApellido\",\"$bdUsuario\",\"$bdContraseña\",\"$bdCorreo\");";
-    $result = mysqli_query($conn,$consultarUsuarios);
+    $consultresult = registrarUsuario($bdNombre, $bdApellido, $bdUsuario, $bdCorreo, $bdContrasena,$conn);       
 
-    return $result;
-
+} else {
+    echo "regsitro no exitoso";
 }
 
-$consultresult = registrarUsuario($bdNombre, $bdApellido, $bdUsuario, $bdCorreo, $bdContraseña,$conn);
-// if ($consultresult) {
-//     header("location: ./index.php");
-// }
+
+
+function registrarUsuario ($bdNombre, $bdApellido, $bdUsuario, $bdCorreo, $bdContrasena,$conn){   
+
+   $consultarUsuarios = "INSERT INTO `TBLUSERS` (`use_fir_nam`, `use_las_nam`, `use_use_nam`, `use_pas`, `use_ema`) VALUES ('$bdNombre','$bdApellido','$bdUsuario','$bdContrasena','$bdCorreo')";
+    
+    // $consultarUsuarios = "INSERT INTO tblusurs (use_rol_id,use_fir_nam,use_las_nam,use_use,use_pas,use_ema) VALUES(5,\"$bdNombre\",\"$bdApellido\",\"$bdUsuario\",\"$bdContraseña\",\"$bdCorreo\");";
+    $result = mysqli_query($conn,$consultarUsuarios);
+
+    if ($result) {
+        // header("location: ./index.php");
+        echo "regsitro exitoso";
+     }
+
+    return $result;
+}
+
 
 ?>

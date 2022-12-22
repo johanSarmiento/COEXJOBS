@@ -1,3 +1,11 @@
+<?php 
+
+include ("conectarBD.php");
+$consulat = "SELECT * FROM `TBLUSERS`";
+$query = mysqli_query($conn,$consulat);
+//$row = mysqli_fetch_array($query);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <title>Base de datos</title>
 </head>
 <body>
@@ -13,34 +22,33 @@
         <table class="table table-striped tablabase">
             <thead>
                 <tr>
-                <th scope="col">id</th>
-                <th scope="col">First name</th>
-                <th scope="col">Last name</th>
-                <th scope="col">user name</th>
-                <th scope="col">password</th>
-                <th scope="col">email</th>
+                    <th scope="col">id</th>
+                    <th scope="col">First name</th>
+                    <th scope="col">Last name</th>
+                    <th scope="col">user name</th>
+                    <th scope="col">password</th>
+                    <th scope="col">email</th>
                 </tr>
             </thead>
             <tbody>
-                    <?php 
-                    include("conectarBD.php");
-                    $consulat = $sql = "SELECT * FROM `tblusurs`;";
-                    $query = mysqli_query($conn,$consulat);
-                    $row = mysqli_fetch_array($query);
+                    <?php                    
                     
-                    while($row=mysqli_fetch_array($query)) ?>
+                        while($row=mysqli_fetch_array($query)): 
+                    ?>
+                            <tr>
+                                <th><?php echo $row["use_rol_id"]?></th>
+                                <th><?php echo $row["use_fir_nam"]?></th>
+                                <th><?php echo $row["use_las_nam"]?></th>
+                                <th><?php echo $row["use_use_nam"]?></th>
+                                <th><?php echo $row["use_pas"]?></th>
+                                <th><?php echo $row["use_ema"]?></th>
+                            </tr>
 
-                    <tr>
-                        <th><?php echo $row["use_rol_id"]?></th>
-                        <th><?php echo $row["use_fir_nam"]?></th>
-                        <th><?php echo $row["use_las_nam"]?></th>
-                        <th><?php echo $row["use_use"]?></th>
-                        <th><?php echo $row["use_pas"]?></th>
-                        <th><?php echo $row["use_ema"]?></th>
-                    </tr>
+                    <?php 
+                        endwhile;
+                    ?>
             </tbody>
         </table>
     </section>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
