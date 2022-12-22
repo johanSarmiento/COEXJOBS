@@ -12,33 +12,33 @@
     <section class="contenedor registrarse">
         <main class="contenedor divRegistro">
             <h1>Registrate</h1>
-            <form action="" method="get" class="registroForm">
+            <form action="RegistrarUsuario.php" method="GET" class="registroForm">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Nombre</span>
-                    <input type="text" class="form-control" placeholder="nombre" id="Nombre">
+                    <input type="text" class="form-control" placeholder="nombre" name="use_fir_nam">
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Apellido</span>
-                    <input type="text" class="form-control" placeholder="Apellido" id="Apellido">
+                    <input type="text" class="form-control" placeholder="Apellido" name="use_las_nam">
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Usuario</span>
-                    <input type="text" class="form-control" placeholder="Usuario" id="Usuario">
+                    <input type="text" class="form-control" placeholder="Usuario" name="use_use">
                 </div>
 
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Nombre Correo" id="Correo">
+                    <input type="text" class="form-control" placeholder="Nombre Correo" name="use_ema">
                     <span class="input-group-text" id="basic-addon2">@correo.com</span>
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Contraseña</span>
-                    <input type="password" class="form-control" placeholder="Constraseña" id="Contraseña">
+                    <input type="password" class="form-control" placeholder="Constraseña" name="use_pas">
                 </div>
 
-                <button type="submit" class="btn btn-light">Submit</button> 
+                <button type="submit" class="btn btn-light">Submit</button>     
             </form>
         </main>
     </section>
