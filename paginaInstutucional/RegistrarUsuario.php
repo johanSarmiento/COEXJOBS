@@ -20,7 +20,7 @@ if (isset($_GET["use_fir_nam"]) && isset($_GET["use_las_nam"]) && isset($_GET["u
 
 function registrarUsuario ($bdNombre, $bdApellido, $bdUsuario, $bdCorreo, $bdContrasena,$conn){   
 
-   $consultarUsuarios = "INSERT INTO `tblusurs` (`use_fir_nam`, `use_las_nam`, `use_use`, `use_pas`, `use_ema`) VALUES ('$bdNombre','$bdApellido','$bdUsuario','$bdContrasena','$bdCorreo')";
+   $consultarUsuarios = "INSERT INTO `TBLUSERS` (`use_fir_nam`, `use_las_nam`, `use_use_nam`, `use_pas`, `use_ema`) VALUES ('$bdNombre','$bdApellido','$bdUsuario','$bdContrasena','$bdCorreo')";
 
     $result = mysqli_query($conn,$consultarUsuarios);
 
